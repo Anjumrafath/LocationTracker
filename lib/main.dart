@@ -46,8 +46,6 @@ class _FinalViewState extends State<FinalView> {
 
   /// Fetches the user's location and updates the UI
   Future<void> getLocation() async {
-    // setState(() => _isLoading = true); // Show loading indicator
-
     final locationData =
         await locationHelper.getUserLocation(); // Fetch location
 
@@ -85,15 +83,7 @@ class _FinalViewState extends State<FinalView> {
             const SizedBox(height: 20), // Add spacing
             ElevatedButton(
               onPressed: getLocation, // Fetch location when button is pressed
-              child: const Text('Refresh Location'), // Button text
-            ),
-            const SizedBox(height: 20), // Add spacing
-            TextButton(
-              onPressed: getLocation, // Fetch location when button is pressed
-              child: const Text(
-                'Set Your Location by adding values in latitude and longitude ',
-              ),
-              // Button text
+              child: const Text('Refresh Location'),
             ),
           ],
         ),
